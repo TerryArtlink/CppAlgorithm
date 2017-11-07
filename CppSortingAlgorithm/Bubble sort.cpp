@@ -7,15 +7,10 @@ using namespace std;
 
 void BubbleSort(int arr[], int n)
 {
-	for (int i = 0; i < n; i++) {
-		for (int j = 0; j < n - 1; j++) {
-			if (arr[j] > arr[j + 1]) {
-				int temp = arr[j];
-				arr[j] = arr[j + 1];
-				arr[j + 1] = temp;
-			}
-		}
-	}
+	for (int i = 0; i < n; i++) 
+		for (int j = 0; j < n - 1; j++) 
+			if (arr[j] > arr[j + 1]) 
+				swap(arr[i], arr[i+1]);
 }
 
 //优化版冒泡  每一轮取出最大值，之后不再对最大值排序
@@ -30,9 +25,7 @@ void BubbleSortOpitimized(int arr[], int len) {
 		*/
 		for (i = current = 0; i < last; ++i) {
 			if (arr[i] > arr[i + 1]) {
-				temp = arr[i];
-				arr[i] = arr[i + 1];
-				arr[i + 1] = temp;
+				swap(arr[i], arr[i+1]);
 				//记录当前的为止， 如果没有发生交换current值即for循环初始化的0
 				current = i;
 			}
