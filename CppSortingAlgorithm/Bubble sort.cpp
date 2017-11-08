@@ -5,13 +5,25 @@
 
 using namespace std;
 
-void BubbleSort(int arr[], int n)
+//template 声明一个任意数据类型
+template <class T>
+
+void BubbleSort(T arr[], int n)
 {
+	//数组中有几个值就遍历几遍
 	for (int i = 0; i < n; i++) 
+		//遍历数组中的每一个值
 		for (int j = 0; j < n - 1; j++) 
+			//遍历的值和它右边的值对比 如果大于右边的值 就交换
 			if (arr[j] > arr[j + 1]) 
 				swap(arr[i], arr[i+1]);
 }
+/* 
+当然，如果考虑到与STL库的兼容性，最好就是将函数的两个参数分别改为数组的起始地址，
+以及最后一个元素的地址+1，这样就能兼容STL的vector容器了，可扩展性进一步得到提升。 
+*/
+
+
 
 //优化版冒泡  每一轮取出最大值，之后不再对最大值排序
 void BubbleSortOpitimized(int arr[], int len) {
