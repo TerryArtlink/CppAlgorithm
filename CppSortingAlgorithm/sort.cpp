@@ -7,7 +7,7 @@ using namespace std;
 
 //template 声明一个任意数据类型
 template <class T>
-
+//==============Bubble sort===============================
 void BubbleSort(T arr[], int n)
 {
 	//数组中有几个值就遍历几遍
@@ -23,10 +23,31 @@ void BubbleSort(T arr[], int n)
 以及最后一个元素的地址+1，这样就能兼容STL的vector容器了，可扩展性进一步得到提升。 
 */
 
+//！！！！！推荐版本！！！！！ visualgo.net bubble sort的思路 + http://www.jianshu.com/p/8abad5e9432b 的优化 最易理解（效率等同于优化版本）
+
+void VisualgoBubbleSort(int arr[], int n) {
+	int count = 0;
+	bool swapped;
+	do
+	{
+		swapped = false;
+		for (int i = 1; i <= n - 1; i++)
+			if (arr[i-1]>arr[i]) {
+				++count;
+				cout << "arr[i - 1] = " << arr[i - 1] << ", arr[i] = " << arr[i] <<"第 "<< count << " 次"<< endl;
+				swap(arr[i - 1], arr[i]);
+				swapped = true;
+			}
+		//每次冒泡完 最大值到最右边，所以下次遍历都不遍历最右边，所以最大值减一
+		n--;
+	} while (swapped);
+}
 
 
-//优化版冒泡  每一轮取出最大值，之后不再对最大值排序
+
+//优化版冒泡  每一轮取出最大值，之后不再对最大值排序(效率等同于visualgo版本)
 void BubbleSortOpitimized(int arr[], int len) {
+	int count = 0;
 	int i, temp;
 	//记录为止， 当前所在位置和最后发生交换的地方
 	int current, last = len - 1;
@@ -37,6 +58,8 @@ void BubbleSortOpitimized(int arr[], int len) {
 		*/
 		for (i = current = 0; i < last; ++i) {
 			if (arr[i] > arr[i + 1]) {
+				++count;
+				cout << "arr[i] = " << arr[i] << ", arr[i+1] = " << arr[i + 1] <<"第 " << count << " 次"<< endl;
 				swap(arr[i], arr[i+1]);
 				//记录当前的为止， 如果没有发生交换current值即for循环初始化的0
 				current = i;
@@ -50,7 +73,7 @@ void BubbleSortOpitimized(int arr[], int len) {
 //降序输出1
 void BubbleSortByDescend(int arr[], int n) {
 	BubbleSort(arr, n);
-	cout << "This is descend :" << endl;
+	cout << "This is bubblesort by descend :" << endl;
 	for (int i = 7; i >= 0; i--) {
 		cout << arr[i] << endl;
 	}
@@ -59,7 +82,7 @@ void BubbleSortByDescend(int arr[], int n) {
 //升序输出
 void BubbleSortByAscend(int arr[], int n) {
 	BubbleSort(arr, n);
-	cout << "This is ascend :" << endl;
+	cout << "This is bubblesort by  ascend :" << endl;
 	for (int i = 0; i < 8; i++) {
 		cout << arr[i] << endl;
 	}
@@ -69,7 +92,7 @@ void BubbleSortByAscend(int arr[], int n) {
 //降序输出优化版
 void BubbleSortOpitimizedByDescend(int arr[], int n) {
 	BubbleSortOpitimized(arr, n);
-	cout << "Opitimized: This is descend :" << endl;
+	cout << "Opitimized: This is bubblesort by  descend :" << endl;
 	for (int i = 7; i >= 0; i--) {
 		cout << arr[i] << endl;
 	}
@@ -79,9 +102,44 @@ void BubbleSortOpitimizedByDescend(int arr[], int n) {
 //升序输出优化版
 void BubbleSortOpitimizedByAscend(int arr[], int n) {
 	BubbleSortOpitimized(arr, n);
-	cout << "Opitimized: This is ascend :" << endl;
+	cout << "Opitimized: This is bubblesort by ascend :" << endl;
 	for (int i = 0; i < 8; i++) {
 		cout << arr[i] << endl;
 	}
 	cout << "\n" << endl;
 }
+
+
+
+//==========================直接插入排序================================
+void InsertionSort(int arr[], int len) {
+	int i, j;
+	int temp;
+	//for each unsorted element X
+	for (i = 1; i < len; i++) {
+		//'extract' the element X
+		temp = arr[i];
+		//for j = lastSortedIndex down to 0
+		//if current element j > X
+		for (j = i - 1; j >= 0 && arr[j] > temp; j--)
+			//move sorted element to the right by 1
+			arr[j + 1] = arr[j];
+		//break loop and insert X here
+		arr[j + 1] = temp;
+	}
+}
+
+
+// i5   j4   1    
+
+void PrintInsertionSortByAsscend(int arr[], int n) {
+	InsertionSort(arr, n);
+	cout << "Insertion sort by ascend: " << endl;
+	for (int i = 0; i < n; i++) {
+		cout << arr[i] << endl;
+	}
+	cout << "\n" << endl;
+}
+
+
+

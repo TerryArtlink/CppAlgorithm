@@ -21,7 +21,7 @@
     <ClInclude Include="targetver.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Bubble sort.h">
+    <ClInclude Include="sort.h">
       <Filter>Source Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -32,7 +32,7 @@
     <ClCompile Include="CppSortingAlgorithm.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Bubble sort.cpp">
+    <ClCompile Include="sort.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
