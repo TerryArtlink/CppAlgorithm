@@ -44,7 +44,7 @@ void VisualgoBubbleSort(int arr[], int n) {
 }
 
 //int冒泡排序免长度加强版
-	//目前缺少模板T任意类型数组（稍后再做）
+
 void VisualgoBubbleSortWithIntWithoutLenth(int arr[]) {
 	int length = (int) sizeof(arr) / sizeof(*arr);
 	int count = 0;
@@ -184,3 +184,24 @@ int main() {
 	len = (int) sizeof(arrf) / sizeof(*arrf); bubble_sort(arrf, len); 
 	for (int i = 0; i < len; i++) cout << arrf[i] << ' '; return 0;
 	}
+
+//=====C++ 自带的排序方法（类似于快排，时间复杂度为n*log2(n),执行效率较高）
+//less<数据类型>()     //从小到大排序
+//greater<数据类型>()  //从大到小排序
+void CppSortLess() {
+	int a[10] = { 9, 6, 3, 8, 5, 2, 7, 4, 1, 0 };
+	for (int i = 0; i < 10; i++) 
+		cout << a[i] << endl;
+
+	sort(a, a + 10, less<int>());
+	for (int i = 0; i < 10; i++)
+		cout << a[i] << endl;
+}
+
+void CppSortGreater() {
+	int a[10] = { 9, 6, 3, 8, 5, 2, 7, 4, 1, 0 };
+	for (int i = 0; i < 10; i++)
+		cout << a[i] << endl;
+	//?????
+	
+}
