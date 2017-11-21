@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.27004.2006
+VisualStudioVersion = 15.0.27004.2009
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CppSortingAlgorithm", "CppSortingAlgorithm\CppSortingAlgorithm.vcxproj", "{564EA282-0E39-4757-A5DA-6AA8263A9DA9}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CppSortingAlgorithmTest", "CppSortingAlgorithmTest\CppSortingAlgorithmTest.vcxproj", "{F5622237-5E9B-4ACA-98BF-D2B9BA784BD8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,14 @@ Global
 		{564EA282-0E39-4757-A5DA-6AA8263A9DA9}.Release|x64.Build.0 = Release|x64
 		{564EA282-0E39-4757-A5DA-6AA8263A9DA9}.Release|x86.ActiveCfg = Release|Win32
 		{564EA282-0E39-4757-A5DA-6AA8263A9DA9}.Release|x86.Build.0 = Release|Win32
+		{F5622237-5E9B-4ACA-98BF-D2B9BA784BD8}.Debug|x64.ActiveCfg = Debug|x64
+		{F5622237-5E9B-4ACA-98BF-D2B9BA784BD8}.Debug|x64.Build.0 = Debug|x64
+		{F5622237-5E9B-4ACA-98BF-D2B9BA784BD8}.Debug|x86.ActiveCfg = Debug|Win32
+		{F5622237-5E9B-4ACA-98BF-D2B9BA784BD8}.Debug|x86.Build.0 = Debug|Win32
+		{F5622237-5E9B-4ACA-98BF-D2B9BA784BD8}.Release|x64.ActiveCfg = Release|x64
+		{F5622237-5E9B-4ACA-98BF-D2B9BA784BD8}.Release|x64.Build.0 = Release|x64
+		{F5622237-5E9B-4ACA-98BF-D2B9BA784BD8}.Release|x86.ActiveCfg = Release|Win32
+		{F5622237-5E9B-4ACA-98BF-D2B9BA784BD8}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

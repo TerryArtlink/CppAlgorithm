@@ -24,7 +24,7 @@ void BubbleSort(T arr[], int n)
 */
 
 //！！！！！推荐版本！！！！！ visualgo.net bubble sort的思路 + http://www.jianshu.com/p/8abad5e9432b 的优化 最易理解（效率等同于优化版本）
-	//目前缺少模板T任意类型数组（稍后再做）
+	
 void VisualgoBubbleSort(int arr[], int n) {
 	int count = 0;
 	bool swapped;
@@ -44,6 +44,7 @@ void VisualgoBubbleSort(int arr[], int n) {
 }
 
 //int冒泡排序免长度加强版
+	//目前缺少模板T任意类型数组（稍后再做）
 void VisualgoBubbleSortWithIntWithoutLenth(int arr[]) {
 	int length = (int) sizeof(arr) / sizeof(*arr);
 	int count = 0;
