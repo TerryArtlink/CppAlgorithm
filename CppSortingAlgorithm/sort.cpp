@@ -24,7 +24,7 @@ void BubbleSort(T arr[], int n)
 */
 
 //！！！！！推荐版本！！！！！ visualgo.net bubble sort的思路 + http://www.jianshu.com/p/8abad5e9432b 的优化 最易理解（效率等同于优化版本）
-
+	//目前缺少模板T任意类型数组（稍后再做）
 void VisualgoBubbleSort(int arr[], int n) {
 	int count = 0;
 	bool swapped;
@@ -42,6 +42,23 @@ void VisualgoBubbleSort(int arr[], int n) {
 		n--;
 	} while (swapped);
 }
+
+//int冒泡排序免长度加强版
+void VisualgoBubbleSortWithIntWithoutLenth(int arr[]) {
+	int length = (int) sizeof(arr) / sizeof(*arr);
+	int count = 0;
+	bool swapped;
+	do{
+		for(int i = 1; i <= length; i++)
+			if (arr[i-1] > arr[i]) {
+				++count;
+				swap(arr[i - 1], arr[i]);
+				swapped = true;
+			}
+		length--;
+	} while (swapped);
+}
+
 
 
 
@@ -143,3 +160,26 @@ void PrintInsertionSortByAsscend(int arr[], int n) {
 
 
 
+
+template<typename T> 
+void bubble_sort(T arr[], int len) {
+	int i, j; T temp; 
+	for (i = 0; i < len - 1; i++) 
+		for (j = 0; j < len - 1 - i; j++) 
+			if (arr[j] > arr[j + 1]) {
+		temp = arr[j]; 
+		arr[j] = arr[j + 1]; 
+		arr[j + 1] = temp; 
+			}
+}
+
+int main() {
+	int arr[] = { 61, 17, 29, 22, 34, 60, 72, 21, 50, 1, 62 }; 
+	int len = (int) sizeof(arr) / sizeof(*arr); 
+	bubble_sort(arr, len); 
+	for (int i = 0; i < len; i++) 
+		cout << arr[i] << ' '; 
+	cout << endl; float arrf[] = { 17.5, 19.1, 0.6, 1.9, 10.5, 12.4, 3.8, 19.7, 1.5, 25.4, 28.6, 4.4, 23.8, 5.4 }; 
+	len = (int) sizeof(arrf) / sizeof(*arrf); bubble_sort(arrf, len); 
+	for (int i = 0; i < len; i++) cout << arrf[i] << ' '; return 0;
+	}
